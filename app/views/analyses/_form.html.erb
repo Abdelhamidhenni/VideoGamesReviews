@@ -1,0 +1,32 @@
+<%= form_with(model: analysis, local: true) do |form| %>
+  <% if analysis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(analysis.errors.count, "error") %> prohibited this analysis from being saved:</h2>
+
+      <ul>
+      <% analysis.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :analysis_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, id: :analysis_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, id: :analysis_rating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

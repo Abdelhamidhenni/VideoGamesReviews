@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @analysis.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @analysis.content %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @analysis.rating %>
+</p>
+
+<%= link_to 'Edit', edit_analysis_path(@analysis) %> |
+<%= link_to 'Back', analyses_path %>
